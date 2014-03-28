@@ -1,17 +1,79 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+<base href="http://marbiaz.github.io/"></base>
+<link rel="stylesheet" type="text/css" href="style.css" />
 
-<HTML>
-<HEAD>
-<meta http-equiv="refresh" content="0; url=http://people.irisa.fr/Marco.Biazzini" />
-  <TITLE>Marco Biazzini's Web Page</TITLE>
- <BASE href="http://people.irisa.fr/Marco.Biazzini/  target="_top">
-</HEAD>
+<script src="jquery.js"></script>
+    <script>
+    function GetURLParameter(sParam)
+    {
+      var sPageURL = window.location.search.substring(1);
+      var sURLVariables = sPageURL.split("&");
+      for (var i = 0; i < sURLVariables.length; i++)
+      {
+        var sParameterName = sURLVariables[i].split("=");
+        if (sParameterName[0] == sParam)
+        {
+            return sParameterName[1];
+        }
+      }
+      return "";
+    };
 
-<frameset rows="134,*" border="0" name="all">
+    $(function()
+    {
+      var pinc = GetURLParameter("p");
+      if (pinc == "")
+      {
+        pinc = "home.html";
+      }
+      $("#content").load(pinc);
+    }
+    );
+    </script>
+</head>
+<body>
+<div id="wrap">
 
-  <frame name="head" src="./head.html" scrolling="no" marginheight="0">
-  <frame name="main" src="./main.html">
+<div id="header">
+<img style="margin: 0 40px 40px 0; float: right; margin: 0 40px 0 0; padding: 40px 0 0 0" src="me.jpg" alt="image" />
+<h1>Marco Biazzini</h1><br/>
+<h2>Ph.D.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Computer Scientist</h2>
+</div>
 
-</frameset>
+<div id="menu">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="index.html?p=pubs.html">Publications</a></li>
+<li><a href="http://scholar.google.fr/citations?user=ZtKHMeMAAAAJ&hl=en" target="_blank">Me@GoogleScholar</a></li>
+<li><a href="index.html?p=jobs.html">Past Jobs</a></li>
+<li><a href="index.html?p=dev.html">My Code</a></li>
+<li><a href="docs/Biazzini_CV.pdf" target="_blank">CV</a></li>
+<li><a href="index.html?p=contacts.html">Contacts</a></li>
+</ul>
+</div>
 
-</HTML>
+<div id="content"></div>
+
+<div class="clear"> </div>
+<div id="footer">
+
+<div class="left">
+Copyright &copy; 2014 by <a href="#">Marco Biazzini</a>
+</div>
+
+<div class="right">
+<!-- Please consider leaving the credit - link back to our website in the footer intact or if you want to remove it please buy link back free license on http://www.simpletemplates.org/simple-website-template-3.html
+-->
+Design by <a href="http://www.simpletemplates.org">Simple Website Templates</a>
+</div>
+
+<div class="clear"> </div>
+
+</div>
+
+</div>
+</body>
+</html>
+
